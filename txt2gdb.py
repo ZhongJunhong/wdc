@@ -110,9 +110,8 @@ def main():
     
     for wf in tqdm([
                     # 'SSD', 
-                    'TEM', 
-                    # 'GST', 'PRS', 'WIN', 
-                    # 'RHU', 'PRE', 'EVP'
+                    'TEM', 'GST', 'PRS', 
+                    # 'WIN', 'RHU', 'PRE', 'EVP'
                     ]):
         for f in tqdm(iterTXT('datasets/' + wf)):
             weather_feature = wf
