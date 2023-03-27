@@ -48,7 +48,7 @@ def txt2Dataframe(txt_file_path, header_name):
     for i in qcc:
         index = 0
         for v in df.loc[0:len(df), i].values.tolist():
-            if int(v) != 0:
+            if v != 0:
                 df.at[index, i.strip('_code')] = ''
             else:
                 pass
@@ -84,8 +84,10 @@ def groupbyStation(input_df, header_name0):
             pass
         groupby_result.at[i[0], 'elevation'] = ele * 0.1
 
+        date = str(i[6])
+
         for v in header_name[7:]:
-            groupby_result.at[i[0], str(v) + '_' + str(i[6])] = i[header_name.index(v)]
+            groupby_result.at[i[0], str(v) + '_' + date] = i[header_name.index(v)]
 
     return groupby_result
 
@@ -95,7 +97,7 @@ def table2GDB(df, epsg, gdb_path, feature_name):
     gdf = gpd.GeoDataFrame(df, 
                            geometry = gpd.points_from_xy(df.longtitude, df.latitude), 
                            crs = 'EPSG:' + str(epsg))
-
+    
     gdf.to_file(gdb_path, 
                 driver = 'OpenFileGDB', 
                 layer = feature_name)
@@ -109,9 +111,9 @@ def main():
         header_dict = json.load(f)
     
     for wf in tqdm([
-                    # 'SSD', 
-                    'TEM', 'GST', 'PRS', 
-                    # 'WIN', 'RHU', 'PRE', 'EVP'
+                    # 'SSD', 'TEM', 'GST', 'PRS', 
+                    # 'WIN', 'RHU', 'PRE', 
+                    'EVP'
                     ]):
         for f in tqdm(iterTXT('datasets/' + wf)):
             weather_feature = wf
