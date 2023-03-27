@@ -111,9 +111,8 @@ def main():
         header_dict = json.load(f)
     
     for wf in tqdm([
-                    # 'SSD', 'TEM', 'GST', 'PRS', 
-                    # 'WIN', 'RHU', 'PRE', 
-                    'EVP'
+                    # 'SSD', 'TEM', 'GST', 'PRS', 'EVP'
+                    'RHU', 'PRE', 'WIN'
                     ]):
         for f in tqdm(iterTXT('datasets/' + wf)):
             weather_feature = wf
