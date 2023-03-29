@@ -21,7 +21,14 @@
 
 txt2gdb.py: 将datasets转为文件地理数据库GeoDatabase格式
 
-转换结果：
-> https://pan.baidu.com/s/1V6dqd1oj2DiuKL-LyknXiA?pwd=3j34
+由于转换结果太大所以上传百度网盘：
+
+> 链接: https://pan.baidu.com/s/1TK0ttApPY38M59IOk_ugcw?pwd=ztdr 提取码: ztdr 
 
 txt2db.py: 将datasets转为文件地理数据库sqlite格式
+
+datasets.zip: 重新使用txt2db.py和txt2gdb.py时需要讲datasets.zip解压，放在工作根目录下。
+
+因为datasets.zip文件太大所以上传百度网盘：
+
+> 链接: https://pan.baidu.com/s/1FTBKoNmPssC9Pb4nvVX8ZA?pwd=mfmd 提取码: mfmd 

@@ -1,5 +1,3 @@
 __pycache__/
 datasets/
-csvdatasets/
-gdb/
-weather.db
+datasets.zip
